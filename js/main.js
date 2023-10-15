@@ -1,6 +1,25 @@
 (function ($) {
     "use strict";
 
+    // email submit
+    $('#contactus').submit(function(event){
+        event.preventDefault();
+        const recipient = 'info@accohrdrycleaners.com';
+        const subject = 'Suggestions / Claims / Complaints';
+        var name = $('input[name=name]').val();
+        var mobile = $('input[name=phone]').val();
+        var message = $('textarea[name=message]').val();
+
+        const body = 'Name: '+name+'\n'+'Mobile No.: '+mobile+'\n'+'Message: '+message;
+
+        const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        $('input[name=name]').val('');
+        $('input[name=phone]').val('');
+        $('textarea[name=message]').val('');
+
+        window.location.href = mailtoLink;
+    })
+
     // Popup on initial load
     $(document).ready(function () {
         // localStorage.setItem("initialPopup","")
