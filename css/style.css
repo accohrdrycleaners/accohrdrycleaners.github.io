@@ -5600,6 +5600,12 @@ a.close.disabled {
   overflow: scroll;
 }
 
+#footer, 
+#copyright {
+  position: relative;
+  z-index: 99999;
+}
+
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 500px;
@@ -9556,7 +9562,7 @@ h6,
   display: none;
   right: 30px;
   bottom: 30px;
-  z-index: 11;
+  z-index: 99999;
   animation: action 1s infinite alternate;
 }
 
