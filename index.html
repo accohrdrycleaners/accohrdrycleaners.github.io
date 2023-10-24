@@ -514,56 +514,19 @@
         <div class="container">
             <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Our Blog</h6>
             <h1 class="display-4 text-center mb-5">Latest From Blog</h1>
-            <div class="row">
-                <div class="col-lg-4 mb-2">
-                    <div class="shadow mb-4">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="img/blog-1.jpg" alt="">
-                            <a href="" class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center   text-decoration-none p-4" style="top: 0; left: 0; background: rgba(0, 0, 0, .4);">
-                                <h4 class="text-center text-white font-weight-medium mb-3">How to Choose the Right Dry Cleaner for Your Needs ?</h4>
-                                <div class="d-flex text-light">
-                                    <small class="mr-2"><i class="fa fa-user text-secondary"></i> Adarsh (2020 7 February)</small>
-                                    <!-- <small class="mr-2"><i class="fa fa-folder text-secondary"></i> Web Design</small>
-                                    <small class="mr-2"><i class="fa fa-comments text-secondary"></i> 15</small> -->
-                                </div>
-                            </a>
-                        </div>
-                        <p class="m-0 p-4 pb-0">Choosing the right dry cleaner is important to ensure that your clothes are cleaned properly and returned to you in good condition. Ask your friends and family for recommendations. Word-of-mouth is often the best way to find a good dry cleaner.</p>
-                        <a class="m-0 p-4" href="#">READ MORE</a>
-                    </div>
+            <div class="swiper-container">
+                <div class="swiper-content no-scrollbar" id="blogs-scroll">
+                    <!-- This content will be rendered from a file name blogs.js -->
                 </div>
-                <div class="col-lg-4 mb-2">
-                    <div class="shadow mb-4">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="img/blog-2.jpg" alt="">
-                            <a href="" class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center   text-decoration-none p-4" style="top: 0; left: 0; background: rgba(0, 0, 0, .4);">
-                                <h4 class="text-center text-white font-weight-medium mb-3">Eco-friendly dry cleaning methods</h4>
-                                <div class="d-flex text-light">
-                                    <small class="mr-2"><i class="fa fa-user text-secondary"></i> Suraj (2021 10 March)</small>
-                                    <!-- <small class="mr-2"><i class="fa fa-folder text-secondary"></i> Web Design</small>
-                                    <small class="mr-2"><i class="fa fa-comments text-secondary"></i> 15</small> -->
-                                </div>
-                            </a>
-                        </div>
-                        <p class="m-0 p-4 pb=0">Wet cleaning uses water and special detergents to clean clothes. It is a gentler process than traditional dry cleaning and does not use any toxic chemicals. Wet cleaning is also more energy-efficient than traditional dry cleaning.</p>
-                        <a class="m-0 p-4" href="#">READ MORE</a>
-                    </div>
+                <div class="button-left arrow" onClick="getPrevBlog()">
+                    <img src="img/left-arrow.png"/>
                 </div>
-                <div class="col-lg-4 mb-2">
-                    <div class="shadow mb-4">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="img/blog-3.jpg" alt="">
-                            <a href="" class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center   text-decoration-none p-4" style="top: 0; left: 0; background: rgba(0, 0, 0, .4);">
-                                <h4 class="text-center text-white font-weight-medium mb-3">How to Dry Clean Delicate Fabrics: Silk, Wool, and More</h4>
-                                <div class="d-flex text-light">
-                                    <small class="mr-2"><i class="fa fa-user text-secondary"></i> Shekhar (2023 4 October)</small>
-                                    <!-- <small class="mr-2"><i class="fa fa-folder text-secondary"></i> Web Design</small>
-                                    <small class="mr-2"><i class="fa fa-comments text-secondary"></i> 15</small> -->
-                                </div>
-                            </a>
-                        </div>
-                        <p class="m-0 p-4 pb-0">The longer a stain sits, the harder it will be to remove. So, as soon as you get a stain, try to treat it right away. Different types of stains require different treatment methods. So, it's important to identify the stain before you start trying to remove it.</p>
-                        <a class="m-0 p-4" href="#">READ MORE</a>
+                <div class="button-right arrow" onClick="getNextBlog()">
+                    <img src="img/right-arrow.png"/>
+                </div>
+                <div style="margin-top: 20px; display: flex; justify-content:center;">
+                    <div style="width: 100px; height: 8px; border-radius: 10px; background-color:#F3F6FF;">
+                        <div id="slider-bar" style="background-color:#194376; height:100%; width:50%; border-radius: 10px;"></div>
                     </div>
                 </div>
             </div>
@@ -669,7 +632,10 @@
     <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
+    <script src="js/blogs.js"></script>
     <script src="js/main.js"></script>
+    
+
 </body>
 
 </html>

@@ -150,3 +150,53 @@ toggles.forEach(toggle => {
     })
 })
 
+// BLOGS
+var blogScroll = document.getElementById("blogs-scroll");
+if(BLOGS?.length){
+    BLOGS.forEach((blog,index)=>{
+        blogScroll.innerHTML+=`<div class="col-lg-4 mb-2">
+        <div class="shadow mb-4">
+            <div class="position-relative">
+                <img class="img-fluid w-100" src="${blog?.image}" alt="">
+                <a href="" class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center   text-decoration-none p-4" style="top: 0; left: 0; background: rgba(0, 0, 0, .4);">
+                    <h4 class="text-center text-white font-weight-medium mb-3">${blog?.title}</h4>
+                    <div class="d-flex text-light">
+                        <small class="mr-2"><i class="fa fa-user text-secondary"></i> ${blog?.creator}</small>
+                        <!-- <small class="mr-2"><i class="fa fa-folder text-secondary"></i> Web Design</small>
+                        <small class="mr-2"><i class="fa fa-comments text-secondary"></i> 15</small> -->
+                    </div>
+                </a>
+            </div>
+            <p class="m-0 p-4 pb-0">${blog?.blog}</p>
+            <a class="m-0 p-4" href="#">READ MORE</a>
+        </div>
+    </div>`
+    })
+}
+var current = 0;
+blogScroll.addEventListener("scroll",(e)=>{
+    let clientWidth = e?.target?.clientWidth;
+    let scrollWidth = e?.target?.scrollWidth;
+    let scrollLeft = e?.target?.scrollLeft;
+    let sliderWidth = 1.00*(clientWidth/scrollWidth)*100.00;
+    let marginLeft = (100.00 * (scrollLeft/scrollWidth));
+    let sliderBar = document.getElementById("slider-bar");
+    sliderBar.style.width=`${sliderWidth}%`;
+    sliderBar.style.marginLeft=`${marginLeft}%`;
+})
+
+function getNextBlog (){
+    if((current+3)>BLOGS?.length){return;}
+    const scrollLeft = blogScroll.children[current+3].offsetLeft;
+    current = current+3;
+    blogScroll.scrollLeft = scrollLeft;
+
+}
+function getPrevBlog (){
+    if((current-3)<0){return;}
+    const scrollLeft = blogScroll.children[current-3].offsetLeft;
+    current = current-3;
+    blogScroll.scrollLeft = scrollLeft;
+
+}
+

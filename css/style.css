@@ -5,6 +5,35 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.arrow{
+  position: absolute;
+  top: 50%;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.button-left{
+  left: -20px;
+}
+.button-right{
+  right: -20px;
+}
+.swiper-container{
+  position: relative;
+}
+.swiper-content{
+  display: flex;
+  flex-direction: row;
+  height: 460px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
